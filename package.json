@@ -1,0 +1,32 @@
+{
+  "name": "gradients",
+  "version": "0.0.1",
+  "author": "Grant Surlyn <grant@sunflowerseastar.com>",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "build": "esbuild src/main.ts --outfile=public/out.js --bundle --minify",
+    "dev": "esbuild src/main.ts --outfile=public/out.js --bundle --watch",
+    "prettier:check": "prettier --check '**/*.{ts,js,css,json}'",
+    "prettier:write": "prettier --write '**/*.{ts,js,css,json}'",
+    "start": "esbuild src/main.ts --outfile=public/out.js --bundle --watch"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,js,css,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@types/three": "^0.154.0",
+    "esbuild": "^0.19.8",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.0",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.3.2"
+  }
+}

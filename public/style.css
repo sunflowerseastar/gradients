@@ -1,0 +1,8 @@
+html {
+  overflow: hidden;
+}
+body {
+  background: #222;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
